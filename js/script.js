@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Typewriter Effect
     const words = ["scalable web applications.", "beautiful UI/UX.", "robust RESTful APIs.", "innovative tech solutions."];
+    const typewriter = document.getElementById('typewriter');
     let i = 0;
     let timer;
 
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let word = words[i].split("");
         var loopTyping = function() {
             if (word.length > 0) {
-                document.getElementById('typewriter').innerHTML += word.shift();
+                typewriter.textContent += word.shift();
             } else {
                 deletingEffect();
                 return false;
@@ -84,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var loopDeleting = function() {
             if (word.length > 0) {
                 word.pop();
-                document.getElementById('typewriter').innerHTML = word.join("");
+                typewriter.textContent = word.join("");
             } else {
                 if (words.length > (i + 1)) {
                     i++;
@@ -101,7 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Start typewriter
     if (reduceMotion) {
-        document.getElementById('typewriter').textContent = words[0];
+        typewriter.textContent = words[0];
+        setInterval(() => {
+            i = (i + 1) % words.length;
+            typewriter.textContent = words[i];
+        }, 2400);
     } else {
         setTimeout(typingEffect, 1000);
     }
