@@ -403,31 +403,37 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav { padding: 1rem 5%; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--card-border); }
-    .menu-toggle { display: block; z-index: 1001; position: relative; font-size: 2.2rem; }
+    nav { 
+        padding: 1rem 5%; 
+        background: rgba(10, 10, 10, 0.97); 
+        backdrop-filter: blur(12px); 
+        border-bottom: 1px solid var(--card-border); 
+        position: relative; /* CRITICAL: anchor the dropdown to the navbar */
+    }
+    .menu-toggle { display: block; z-index: 1002; position: relative; font-size: 1.6rem; }
     
     .nav-links {
         position: absolute;
-        top: 75px; 
+        top: calc(100% + 8px); /* sit 8px below the navbar bottom edge */
         right: 5%;
-        width: 250px; 
+        width: 260px;
         height: auto;
-        background: rgba(28, 28, 30, 0.95);
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 16px;
+        background: rgba(30, 30, 32, 0.98);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        padding: 0;
+        padding: 6px 0;
         opacity: 0;
         visibility: hidden;
-        transform: scale(0.95) translateY(-10px);
+        transform: scale(0.9) translateY(-8px);
         transform-origin: top right;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 1000;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+        z-index: 1001;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 0 0.5px rgba(255,255,255,0.06);
     }
     .nav-links.active { 
         opacity: 1;
@@ -436,30 +442,33 @@ footer {
     }
     
     .nav-links a { 
-        font-size: 1.1rem; 
+        font-size: 1rem; 
         margin: 0; 
-        padding: 1rem 1.25rem;
+        padding: 0.85rem 1.1rem;
         width: 100%;
         color: #e5e5ea;
         font-weight: 500;
         letter-spacing: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         display: flex;
         justify-content: flex-start;
         align-items: center;
         gap: 12px;
-        transition: background 0.2s ease;
+        transition: background 0.15s ease;
+        border-radius: 0;
     }
     
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
+    .nav-links a:first-child { border-radius: 8px 8px 0 0; }
+    .nav-links a:last-child { border-bottom: none; border-radius: 0 0 8px 8px; }
 
     .nav-links a i {
         display: block;
-        font-size: 1.4rem;
-        color: var(--text-secondary);
+        font-size: 1.2rem;
+        width: 22px;
+        text-align: center;
+        color: #8e8e93;
         transition: color 0.2s ease;
+        flex-shrink: 0;
     }
 
     .nav-links a::after {
@@ -467,13 +476,13 @@ footer {
     }
     
     .nav-links a:hover, .nav-links a:active {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.08);
         color: #fff;
-        padding-left: 1.25rem; /* Remove the shift right effect */
+        padding-left: 1.1rem;
     }
     
     .nav-links a:hover i, .nav-links a:active i {
-        color: var(--primary-color);
+        color: #0a84ff;
     }
     
     section { padding: 5rem 5% 2rem; }
