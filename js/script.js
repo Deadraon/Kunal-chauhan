@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
         const icon = menuToggle.querySelector('i');
         if (navLinks.classList.contains('active')) {
             icon.classList.remove('bx-menu-alt-right');
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
             menuToggle.querySelector('i').classList.replace('bx-x', 'bx-menu-alt-right');
         });
     });
