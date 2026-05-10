@@ -609,9 +609,7 @@ footer {
     .nav-overlay {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.62);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
+        background: rgba(0, 0, 0, 0.42);
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.22s ease, visibility 0.22s ease;
