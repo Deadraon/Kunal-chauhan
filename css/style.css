@@ -81,6 +81,7 @@ nav {
     text-decoration: none;
     color: var(--primary-color);
     letter-spacing: -0.02em;
+    white-space: nowrap;
 }
 
 .nav-links {
@@ -402,7 +403,7 @@ footer {
     .contact-container { grid-template-columns: 1fr; gap: 2rem; }
 }
 
-@@media (max-width: 768px) {
+@media (max-width: 768px) {
 
     /* ── Navbar ─────────────────────────────────────────── */
     nav {
