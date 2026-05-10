@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunal Chauhan | Full-Stack Developer</title>
-    <meta name="description" content="Portfolio of Kunal Chauhan, a passionate Full-Stack Developer and BCA student at COER University. Specialized in React, Node.js, and Azure.">
+    <meta name="description" content="Portfolio of Kunal Chauhan, a passionate Full-Stack Developer and BCA student at COER University.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -18,14 +18,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Animated Blobs Background -->
     <div class="bg-blobs">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
     </div>
 
     <nav>
         <a href="#" class="logo">KUNAL<span class="gradient-text">.CHAUHAN</span></a>
-        <div class="nav-links">
+        <div class="menu-toggle" id="mobile-menu"><i class='bx bx-menu-alt-right'></i></div>
+        <div class="nav-links" id="nav-links">
+            <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
@@ -37,96 +41,70 @@
     <main>
         <!-- Hero Section -->
         <section class="hero" id="home">
-            <div class="reveal">
-                <h1 class="gradient-text">Full-Stack<br>Developer.</h1>
-                <p>Hi, I'm Kunal Chauhan. A motivated developer passionate about building scalable applications and solving complex problems with code.</p>
+            <div class="hero-content stagger-reveal">
+                <h1>Hi, I'm <br><span class="gradient-text">Kunal Chauhan</span></h1>
+                <p>I build <span id="typewriter" style="font-weight: 600; color: var(--primary-color);"></span><span class="typewriter-cursor"></span><br>Motivated developer passionate about scalable applications.</p>
                 <div class="cta-group">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    <a href="#projects" class="btn btn-primary"><i class='bx bx-briefcase-alt-2'></i> View Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual stagger-reveal" style="transition-delay: 0.2s;">
+                <div class="hero-visual-card">
+                    <i class='bx bxl-react' style="font-size: 5rem; color: var(--accent-color); margin-bottom: 1rem; animation: rotateCard 10s linear infinite;"></i>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary);">Full-Stack<br>Developer</h3>
+                    <p style="color: var(--primary-color); font-weight: 600;">9.0 CGPA | COER Univ.</p>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about">
-            <h2 class="section-title reveal">About Me</h2>
-            <div class="card reveal" style="max-width: 800px; margin: 0 auto;">
-                <p>I am a BCA Student at <strong>COER University, Roorkee (2024–2028)</strong> maintaining a <strong>9.0 CGPA</strong>. My journey in tech is driven by a curiosity to understand how things work and a desire to build things that make an impact.</p>
-                <br>
-                <p>As a quick learner and a hackathon runner-up, I thrive in fast-paced environments and love collaborating with teams to deliver high-quality software.</p>
+            <h2 class="section-title stagger-reveal">About Me</h2>
+            <div class="card stagger-reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">I am a BCA Student at <strong>COER University, Roorkee (2024–2028)</strong>. My journey in tech is driven by a deep curiosity to understand how things work and a relentless desire to build solutions that make a real impact.</p>
+                <p style="font-size: 1.1rem;">As a quick learner and a <strong>Hackathon Runner-Up</strong>, I thrive in fast-paced environments. Whether it's crafting a beautiful UI or architecting a robust database, I love collaborating with teams to deliver high-quality, scalable software.</p>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills">
-            <h2 class="section-title reveal">My Expertise</h2>
+            <h2 class="section-title stagger-reveal">My Expertise</h2>
             <div class="grid skills-grid">
-                <div class="card skill-card reveal">
-                    <i class='bx bxl-c-plus-plus'></i>
-                    <h3>C/C++</h3>
-                </div>
-                <div class="card skill-card reveal">
-                    <i class='bx bxl-java'></i>
-                    <h3>Java</h3>
-                </div>
-                <div class="card skill-card reveal">
-                    <i class='bx bxl-python'></i>
-                    <h3>Python</h3>
-                </div>
-                <div class="card skill-card reveal">
-                    <i class='bx bxl-react'></i>
-                    <h3>React</h3>
-                </div>
-                <div class="card skill-card reveal">
-                    <i class='bx bxl-nodejs'></i>
-                    <h3>Node.js</h3>
-                </div>
-                <div class="card skill-card reveal">
-                    <i class='bx bxl-mongodb'></i>
-                    <h3>MongoDB</h3>
-                </div>
-                <div class="card skill-card reveal">
-                    <i class='bx bxs-data'></i>
-                    <h3>MySQL</h3>
-                </div>
-                <div class="card skill-card reveal">
-                    <i class='bx bxl-microsoft'></i>
-                    <h3>Azure</h3>
-                </div>
+                <div class="card skill-card stagger-reveal" style="transition-delay: 0.1s;"><i class='bx bxl-c-plus-plus'></i><h3>C/C++</h3></div>
+                <div class="card skill-card stagger-reveal" style="transition-delay: 0.2s;"><i class='bx bxl-java'></i><h3>Java</h3></div>
+                <div class="card skill-card stagger-reveal" style="transition-delay: 0.3s;"><i class='bx bxl-python'></i><h3>Python</h3></div>
+                <div class="card skill-card stagger-reveal" style="transition-delay: 0.4s;"><i class='bx bxl-react'></i><h3>React</h3></div>
+                <div class="card skill-card stagger-reveal" style="transition-delay: 0.5s;"><i class='bx bxl-nodejs'></i><h3>Node.js</h3></div>
+                <div class="card skill-card stagger-reveal" style="transition-delay: 0.6s;"><i class='bx bxl-mongodb'></i><h3>MongoDB</h3></div>
+                <div class="card skill-card stagger-reveal" style="transition-delay: 0.7s;"><i class='bx bxs-data'></i><h3>MySQL</h3></div>
+                <div class="card skill-card stagger-reveal" style="transition-delay: 0.8s;"><i class='bx bxl-microsoft'></i><h3>Azure</h3></div>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2 class="section-title reveal">Featured Projects</h2>
+            <h2 class="section-title stagger-reveal">Featured Projects</h2>
             <div class="grid projects-grid">
-                <div class="card project-card reveal">
+                <div class="card project-card stagger-reveal" style="transition-delay: 0.1s;">
                     <h3>Full-Stack Dashboard</h3>
-                    <p>A comprehensive web application built with React, Node.js, and MongoDB, featuring real-time data visualization and secure authentication.</p>
+                    <p>A comprehensive web application featuring real-time data visualization and secure authentication mechanisms.</p>
                     <div class="tag-group">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">Azure</span>
+                        <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
                     </div>
                 </div>
-                <div class="card project-card reveal">
+                <div class="card project-card stagger-reveal" style="transition-delay: 0.3s;">
                     <h3>RESTful API Service</h3>
-                    <p>Scalable API infrastructure deployed on Microsoft Azure, providing seamless integration for mobile and web clients with robust security.</p>
+                    <p>Scalable API infrastructure deployed on Microsoft Azure, providing seamless integration for mobile and web clients.</p>
                     <div class="tag-group">
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Express</span>
-                        <span class="tag">REST</span>
-                        <span class="tag">Azure</span>
+                        <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Azure</span>
                     </div>
                 </div>
-                <div class="card project-card reveal">
+                <div class="card project-card stagger-reveal" style="transition-delay: 0.5s;">
                     <h3>Hackathon Runner-Up Project</h3>
                     <p>Award-winning application developed in 48 hours, focusing on user experience and innovative problem-solving.</p>
                     <div class="tag-group">
-                        <span class="tag">React</span>
-                        <span class="tag">Firebase</span>
-                        <span class="tag">UI/UX</span>
+                        <span class="tag">React</span><span class="tag">Firebase</span><span class="tag">UI/UX</span>
                     </div>
                 </div>
             </div>
@@ -134,63 +112,59 @@
 
         <!-- Experience Section -->
         <section id="experience">
-            <h2 class="section-title reveal">Experience & Achievements</h2>
-            <div class="internship-content">
-                <div class="timeline-item reveal">
-                    <h3>Java & MySQL Training Internship</h3>
-                    <p class="gradient-text">Intern</p>
+            <h2 class="section-title stagger-reveal">Experience & Achievements</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="timeline-item stagger-reveal" style="transition-delay: 0.1s;">
+                    <h3 style="color: var(--primary-color); font-size: 1.5rem;">Java & MySQL Training Internship</h3>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-secondary);">Intern Role</p>
                     <p>Built end-to-end JDBC applications, practiced complex SQL queries, optimized stored procedures, and mastered database design principles.</p>
                 </div>
-                <div class="timeline-item reveal">
-                    <h3>College Hackathon</h3>
-                    <p class="gradient-text">2nd Place Winner</p>
-                    <p>Competed with top talent to build a functional prototype within a limited timeframe. Recognized for technical execution and presentation.</p>
+                <div class="timeline-item stagger-reveal" style="transition-delay: 0.3s; border-left-color: var(--secondary-color);">
+                    <h3 style="color: var(--secondary-color); font-size: 1.5rem;">College Hackathon</h3>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-secondary);">2nd Place Winner</p>
+                    <p>Competed with top talent to build a functional prototype within a limited timeframe. Recognized for technical execution and pristine presentation.</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact">
-            <h2 class="section-title reveal">Get In Touch</h2>
-            <div class="contact-container reveal">
-                <div class="contact-info">
-                    <h3>Let's collaborate!</h3>
-                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-                    <div class="contact-links">
+            <h2 class="section-title stagger-reveal">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="stagger-reveal" style="transition-delay: 0.1s;">
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-color);">Let's collaborate!</h3>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <a href="mailto:chauhankunal695@gmail.com" class="contact-link">
-                            <i class='bx bx-envelope'></i>
-                            chauhankunal695@gmail.com
+                            <i class='bx bx-envelope'></i> chauhankunal695@gmail.com
                         </a>
                         <a href="tel:+916396714325" class="contact-link">
-                            <i class='bx bx-phone'></i>
-                            +91 6396714325
+                            <i class='bx bx-phone'></i> +91 6396714325
                         </a>
                         <a href="https://github.com/deadraon" target="_blank" class="contact-link">
-                            <i class='bx bxl-github'></i>
-                            github.com/deadraon
+                            <i class='bx bxl-github'></i> github.com/deadraon
                         </a>
                         <a href="https://linkedin.com/in/deadraon" target="_blank" class="contact-link">
-                            <i class='bx bxl-linkedin-square'></i>
-                            linkedin.com/in/deadraon
+                            <i class='bx bxl-linkedin-square'></i> linkedin.com/in/deadraon
                         </a>
                     </div>
                 </div>
-                <div class="card">
-                    <form id="contact-form">
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <input type="text" placeholder="Your Name" style="background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); padding: 1rem; border-radius: 10px; color: white; outline: none;">
-                            <input type="email" placeholder="Your Email" style="background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); padding: 1rem; border-radius: 10px; color: white; outline: none;">
-                            <textarea placeholder="Your Message" rows="5" style="background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); padding: 1rem; border-radius: 10px; color: white; outline: none; resize: none;"></textarea>
-                            <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer;">Send Message</button>
-                        </div>
+                <div class="card stagger-reveal" style="transition-delay: 0.3s; padding: 2.5rem;">
+                    <form id="contact-form" class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required style="resize: none;"></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;">
+                            <i class='bx bx-send'></i> Send Message
+                        </button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="text-align: center; padding: 4rem; border-top: 1px solid var(--card-border); color: var(--text-secondary);">
-        <p>&copy; 2024 Kunal Chauhan. Built with passion.</p>
+    <footer style="text-align: center; padding: 3rem; margin-top: 2rem; background: rgba(255,255,255,0.5); backdrop-filter: blur(10px);">
+        <p style="font-weight: 600;">&copy; 2024 Kunal Chauhan. Built with passion.</p>
     </footer>
 
     <script src="js/script.js"></script>
