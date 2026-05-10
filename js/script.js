@@ -88,11 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             nav.style.padding = '1rem 10%';
-            nav.style.background = 'rgba(255, 255, 255, 0.9)';
-            nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
+            nav.style.background = 'rgba(15, 23, 42, 0.9)';
+            nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
         } else {
             nav.style.padding = '1.5rem 10%';
-            nav.style.background = 'rgba(255, 255, 255, 0.5)';
+            nav.style.background = 'transparent';
             nav.style.boxShadow = 'none';
         }
     });
