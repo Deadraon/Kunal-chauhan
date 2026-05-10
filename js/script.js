@@ -43,6 +43,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Typewriter Effect
+    const words = ["scalable web applications.", "beautiful UI/UX.", "robust RESTful APIs.", "innovative tech solutions."];
+    let i = 0;
+    let timer;
+
+    function typingEffect() {
+        let word = words[i].split("");
+        var loopTyping = function() {
+            if (word.length > 0) {
+                document.getElementById('typewriter').innerHTML += word.shift();
+            } else {
+                deletingEffect();
+                return false;
+            }
+            timer = setTimeout(loopTyping, 100);
+        };
+        loopTyping();
+    }
+
+    function deletingEffect() {
+        let word = words[i].split("");
+        var loopDeleting = function() {
+            if (word.length > 0) {
+                word.pop();
+                document.getElementById('typewriter').innerHTML = word.join("");
+            } else {
+                if (words.length > (i + 1)) {
+                    i++;
+                } else {
+                    i = 0;
+                }
+                typingEffect();
+                return false;
+            }
+            timer = setTimeout(loopDeleting, 50);
+        };
+        setTimeout(loopDeleting, 2000);
+    }
+    
+    // Start typewriter
+    setTimeout(typingEffect, 1000);
+
     // Form Submission Simulation
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
