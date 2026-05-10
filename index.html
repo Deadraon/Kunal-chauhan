@@ -40,10 +40,33 @@
 
         <!-- About Section -->
         <section id="about">
-            <h2 class="section-title reveal">About</h2>
+            <h2 class="section-title reveal">About Me</h2>
             <div style="max-width: 800px;" class="reveal" style="transition-delay: 0.1s;">
-                <p style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-secondary);">Currently pursuing my BCA at <strong>COER University, Roorkee (2024–2028)</strong> with a 9.0 CGPA. I have a deep curiosity for understanding how systems work and a drive to build software that solves real problems.</p>
-                <p style="font-size: 1.1rem; color: var(--text-secondary);">I thrive in fast-paced environments, evidenced by my 2nd place finish in our college hackathon. Whether it's crafting a clean UI or architecting a database, I focus on delivering robust, maintainable code.</p>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">Hello! I'm Kunal Chauhan, a passionate software developer currently pursuing my BCA at <strong>COER University, Roorkee (2024–2028)</strong>, where I maintain a 9.0 CGPA.</p>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">My journey into programming started with a deep curiosity for how systems work behind the scenes. Today, I specialize in building robust full-stack applications. I thrive in fast-paced environments, evidenced by my 2nd place finish in our competitive college hackathon. Whether it's crafting a pixel-perfect user interface, architecting a scalable backend, or designing an efficient database schema, I focus on delivering clean, maintainable, and highly performant code.</p>
+                <p style="font-size: 1.1rem; color: var(--text-secondary);">When I'm not coding, I'm usually exploring new frameworks, contributing to open-source, or analyzing system design architectures.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2 class="section-title reveal">What I Do</h2>
+            <div class="grid projects-grid">
+                <div class="card reveal" style="transition-delay: 0.1s;">
+                    <i class='bx bx-layout' style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Frontend Development</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Building highly interactive, responsive, and accessible user interfaces using React, HTML5, CSS3, and modern JavaScript frameworks.</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <i class='bx bx-server' style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Backend Architecture</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Designing robust RESTful APIs and microservices utilizing Node.js, Express, and secure authentication flows.</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.3s;">
+                    <i class='bx bx-data' style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Database Management</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Structuring efficient data models and writing complex, optimized queries for both NoSQL (MongoDB) and relational databases (MySQL).</p>
+                </div>
             </div>
         </section>
 
@@ -64,11 +87,16 @@
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2 class="section-title reveal">Projects</h2>
+            <h2 class="section-title reveal">Featured Projects</h2>
             <div class="grid projects-grid">
                 <div class="card project-card reveal" style="transition-delay: 0.1s;">
                     <h3>Full-Stack Dashboard</h3>
                     <p>A comprehensive web application featuring real-time data visualization and secure authentication mechanisms.</p>
+                    <ul style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem;">
+                        <li style="margin-bottom: 0.3rem;">Role-based access control (RBAC)</li>
+                        <li style="margin-bottom: 0.3rem;">Real-time analytics integration</li>
+                        <li>Responsive mobile-first design</li>
+                    </ul>
                     <div class="tag-group">
                         <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
                     </div>
@@ -76,13 +104,23 @@
                 <div class="card project-card reveal" style="transition-delay: 0.2s;">
                     <h3>RESTful API Service</h3>
                     <p>Scalable API infrastructure deployed on Microsoft Azure, providing seamless integration for mobile and web clients.</p>
+                    <ul style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem;">
+                        <li style="margin-bottom: 0.3rem;">JWT based Authentication</li>
+                        <li style="margin-bottom: 0.3rem;">Automated CI/CD pipeline</li>
+                        <li>Extensive endpoint documentation</li>
+                    </ul>
                     <div class="tag-group">
                         <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Azure</span>
                     </div>
                 </div>
                 <div class="card project-card reveal" style="transition-delay: 0.3s;">
-                    <h3>Hackathon Project</h3>
+                    <h3>Hackathon Prototype</h3>
                     <p>Award-winning application developed in 48 hours, focusing on user experience and innovative problem-solving.</p>
+                    <ul style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem;">
+                        <li style="margin-bottom: 0.3rem;">Developed under extreme time constraints</li>
+                        <li style="margin-bottom: 0.3rem;">Live presentation to industry judges</li>
+                        <li>Secured 2nd Place out of 50+ teams</li>
+                    </ul>
                     <div class="tag-group">
                         <span class="tag">React</span><span class="tag">Firebase</span><span class="tag">UI/UX</span>
                     </div>
@@ -90,19 +128,41 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
+        <!-- Experience & Education Section -->
         <section id="experience">
-            <h2 class="section-title reveal">Experience</h2>
-            <div class="timeline reveal" style="max-width: 800px; transition-delay: 0.1s;">
-                <div class="timeline-item">
-                    <h3>Java & MySQL Training</h3>
-                    <div class="role">Intern</div>
-                    <p style="color: var(--text-secondary);">Built end-to-end JDBC applications, practiced complex SQL queries, optimized stored procedures, and mastered database design principles.</p>
+            <h2 class="section-title reveal">Experience & Education</h2>
+            <div class="contact-container">
+                <div>
+                    <h3 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--primary-color);">Professional Experience</h3>
+                    <div class="timeline reveal" style="transition-delay: 0.1s;">
+                        <div class="timeline-item">
+                            <h3>Java & MySQL Training</h3>
+                            <div class="role" style="color: var(--accent-color); font-weight: 500;">Software Engineering Intern</div>
+                            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">Built end-to-end JDBC applications, practiced complex SQL queries, optimized stored procedures, and mastered database design principles.</p>
+                            <ul style="color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.2rem;">
+                                <li>Designed normalized database schemas.</li>
+                                <li>Implemented CRUD operations using Java JDBC.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>College Hackathon</h3>
+                            <div class="role" style="color: var(--accent-color); font-weight: 500;">2nd Place Winner</div>
+                            <p style="color: var(--text-secondary);">Competed with top talent to build a functional prototype within a limited timeframe. Recognized for technical execution and pristine presentation.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <h3>College Hackathon</h3>
-                    <div class="role">2nd Place Winner</div>
-                    <p style="color: var(--text-secondary);">Competed with top talent to build a functional prototype within a limited timeframe. Recognized for technical execution and pristine presentation.</p>
+                
+                <div>
+                    <h3 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--primary-color);">Education</h3>
+                    <div class="timeline reveal" style="transition-delay: 0.2s;">
+                        <div class="timeline-item">
+                            <h3>Bachelor of Computer Applications (BCA)</h3>
+                            <div class="role" style="color: var(--accent-color); font-weight: 500;">COER University, Roorkee</div>
+                            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Duration:</strong> 2024 – 2028</p>
+                            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>CGPA:</strong> 9.0</p>
+                            <p style="color: var(--text-secondary);">Relevant Coursework: Data Structures, Algorithms, DBMS, OOP, and Web Technologies.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
