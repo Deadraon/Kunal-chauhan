@@ -77,8 +77,8 @@ nav {
     align-items: center;
     z-index: 1100;
     background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--card-border);
 }
 
