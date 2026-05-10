@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openMenu() {
         navLinks.classList.add('active');
-        navOverlay.classList.add('active');
+        if (navOverlay) navOverlay.classList.add('active');
         menuIcon.classList.replace('bx-menu', 'bx-x');
     }
 
     function closeMenu() {
         navLinks.classList.remove('active');
-        navOverlay.classList.remove('active');
+        if (navOverlay) navOverlay.classList.remove('active');
         menuIcon.classList.replace('bx-x', 'bx-menu');
     }
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close on overlay tap
-    navOverlay.addEventListener('click', closeMenu);
+    if (navOverlay) navOverlay.addEventListener('click', closeMenu);
 
     // Close when a link is tapped
     document.querySelectorAll('.nav-links a').forEach(link => {
