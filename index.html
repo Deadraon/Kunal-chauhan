@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Kunal Chauhan | Developer</title>
     <meta name="description" content="Portfolio of Kunal Chauhan, a passionate Full-Stack Developer.">
+    <link rel="canonical" href="https://kunalchauhan.me/">
+    <meta property="og:title" content="Kunal Chauhan | Developer">
+    <meta property="og:description" content="Portfolio of Kunal Chauhan, a passionate Full-Stack Developer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kunalchauhan.me/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kunal Chauhan | Developer">
+    <meta name="twitter:description" content="Portfolio of Kunal Chauhan, a passionate Full-Stack Developer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -15,9 +26,11 @@
 <body>
 
     <nav>
-        <a href="#" class="logo">Kunal Chauhan.</a>
-        <div class="menu-toggle" id="mobile-menu"><i class='bx bx-menu'></i></div>
-        <div class="nav-links" id="nav-links">
+        <a href="#home" class="logo">Kunal Chauhan.</a>
+        <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+            <i class='bx bx-menu' aria-hidden="true"></i>
+        </button>
+        <div class="nav-links" id="nav-links" aria-label="Primary navigation">
             <a href="#home"><i class='bx bx-home'></i> Home</a>
             <a href="#about"><i class='bx bx-user'></i> About</a>
             <a href="#projects"><i class='bx bx-folder'></i> Projects</a>
@@ -41,8 +54,8 @@
         <!-- About Section -->
         <section id="about">
             <h2 class="section-title reveal">About Me</h2>
-            <div style="max-width: 800px;" class="reveal" style="transition-delay: 0.1s;">
-                <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">Hello! I'm Kunal Chauhan, a passionate software developer currently pursuing my BCA at <strong>COER University, Roorkee (2024–2028)</strong>, where I maintain a 9.0 CGPA.</p>
+            <div class="reveal" style="max-width: 800px; transition-delay: 0.1s;">
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">Hello! I'm Kunal Chauhan, a passionate software developer currently pursuing my BCA at <strong>COER University, Roorkee (2024-2028)</strong>, where I maintain a 9.0 CGPA.</p>
                 <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">My journey into programming started with a deep curiosity for how systems work behind the scenes. Today, I specialize in building robust full-stack applications. I thrive in fast-paced environments, evidenced by my 2nd place finish in our competitive college hackathon. Whether it's crafting a pixel-perfect user interface, architecting a scalable backend, or designing an efficient database schema, I focus on delivering clean, maintainable, and highly performant code.</p>
                 <p style="font-size: 1.1rem; color: var(--text-secondary);">When I'm not coding, I'm usually exploring new frameworks, contributing to open-source, or analyzing system design architectures.</p>
             </div>
@@ -171,7 +184,7 @@
                         <div class="timeline-item">
                             <h3>Bachelor of Computer Applications (BCA)</h3>
                             <div class="role" style="color: var(--accent-color); font-weight: 500;">COER University, Roorkee</div>
-                            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Duration:</strong> 2024 – 2028</p>
+                            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Duration:</strong> 2024-2028</p>
                             <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>CGPA:</strong> 9.0</p>
                             <p style="color: var(--text-secondary);">Relevant Coursework: Data Structures, Algorithms, DBMS, OOP, and Web Technologies.</p>
                         </div>
@@ -193,20 +206,24 @@
                         <a href="tel:+916396714325" class="contact-link">
                             <i class='bx bx-phone'></i> +91 6396714325
                         </a>
-                        <a href="https://github.com/deadraon" target="_blank" class="contact-link">
+                        <a href="https://github.com/deadraon" target="_blank" rel="noopener noreferrer" class="contact-link">
                             <i class='bx bxl-github'></i> github.com/deadraon
                         </a>
-                        <a href="https://linkedin.com/in/deadraon" target="_blank" class="contact-link">
+                        <a href="https://linkedin.com/in/deadraon" target="_blank" rel="noopener noreferrer" class="contact-link">
                             <i class='bx bxl-linkedin-square'></i> linkedin.com/in/deadraon
                         </a>
                     </div>
                 </div>
                 <div class="reveal" style="transition-delay: 0.2s;">
                     <form id="contact-form" class="contact-form">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
-                        <textarea placeholder="Message" rows="5" required style="resize: none;"></textarea>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <label class="sr-only" for="contact-name">Name</label>
+                        <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Name" required>
+                        <label class="sr-only" for="contact-email">Email</label>
+                        <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="Email" required>
+                        <label class="sr-only" for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" placeholder="Message" rows="5" required style="resize: none;"></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send via email</button>
+                        <p id="form-status" class="form-status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -214,7 +231,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Kunal Chauhan.</p>
+        <p>&copy; <span id="current-year">2026</span> Kunal Chauhan.</p>
     </footer>
 
     <script src="js/script.js"></script>

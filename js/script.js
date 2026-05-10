@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Scroll Reveal Animations
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
@@ -25,14 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openMenu() {
         navLinks.classList.add('active');
+        document.body.classList.add('no-scroll');
         if (navOverlay) navOverlay.classList.add('active');
         menuIcon.classList.replace('bx-menu', 'bx-x');
+        menuToggle.setAttribute('aria-label', 'Close navigation menu');
+        menuToggle.setAttribute('aria-expanded', 'true');
     }
 
     function closeMenu() {
         navLinks.classList.remove('active');
+        document.body.classList.remove('no-scroll');
         if (navOverlay) navOverlay.classList.remove('active');
         menuIcon.classList.replace('bx-x', 'bx-menu');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        menuToggle.setAttribute('aria-expanded', 'false');
     }
 
     menuToggle.addEventListener('click', (e) => {
@@ -42,6 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close on overlay tap
     if (navOverlay) navOverlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            closeMenu();
+        }
+    });
 
     // Close when a link is tapped
     document.querySelectorAll('.nav-links a').forEach(link => {
@@ -88,34 +100,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Start typewriter
-    setTimeout(typingEffect, 1000);
+    if (reduceMotion) {
+        document.getElementById('typewriter').textContent = words[0];
+    } else {
+        setTimeout(typingEffect, 1000);
+    }
 
-    // Form Submission Simulation
+    const currentYear = document.getElementById('current-year');
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+
+    // Static-form fallback that opens the user's mail app with a prefilled draft.
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalContent = btn.innerHTML;
-            
-            btn.innerHTML = 'Sending...';
-            btn.disabled = true;
+            const formData = new FormData(contactForm);
+            const status = document.getElementById('form-status');
+            const name = String(formData.get('name') || '').trim();
+            const email = String(formData.get('email') || '').trim();
+            const message = String(formData.get('message') || '').trim();
+            const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
 
-            setTimeout(() => {
-                btn.innerHTML = 'Message Sent';
-                btn.style.background = '#10b981'; // Green for success
-                btn.style.borderColor = '#10b981';
-                btn.style.color = 'white';
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalContent;
-                    btn.style.background = '';
-                    btn.style.borderColor = '';
-                    btn.style.color = '';
-                    btn.disabled = false;
-                }, 3000);
-            }, 1000);
+            if (status) {
+                status.textContent = 'Opening your email app with a pre-filled draft.';
+            }
+
+            window.location.href = `mailto:chauhankunal695@gmail.com?subject=${subject}&body=${body}`;
         });
     }
 });
