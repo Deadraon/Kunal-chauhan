@@ -19,34 +19,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile Menu Toggle
     const menuToggle = document.getElementById('mobile-menu');
-    const navLinks = document.getElementById('nav-links');
+    const navLinks   = document.getElementById('nav-links');
+    const navOverlay = document.getElementById('nav-overlay');
+    const menuIcon   = menuToggle.querySelector('i');
+
+    function openMenu() {
+        navLinks.classList.add('active');
+        navOverlay.classList.add('active');
+        menuIcon.classList.replace('bx-menu', 'bx-x');
+    }
+
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        navOverlay.classList.remove('active');
+        menuIcon.classList.replace('bx-x', 'bx-menu');
+    }
 
     menuToggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // prevent click from immediately bubbling to document
-        navLinks.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-            icon.classList.remove('bx-menu');
-            icon.classList.add('bx-x');
-        } else {
-            icon.classList.remove('bx-x');
-            icon.classList.add('bx-menu');
-        }
+        e.stopPropagation();
+        navLinks.classList.contains('active') ? closeMenu() : openMenu();
     });
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuToggle.querySelector('i').classList.replace('bx-x', 'bx-menu');
-    });
+    // Close on overlay tap
+    navOverlay.addEventListener('click', closeMenu);
 
-    // Close mobile menu when clicking a link
+    // Close when a link is tapped
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-            menuToggle.querySelector('i').classList.replace('bx-x', 'bx-menu');
-        });
+        link.addEventListener('click', closeMenu);
     });
 
     // Typewriter Effect
