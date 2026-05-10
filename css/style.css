@@ -96,6 +96,11 @@ nav {
     gap: 2.5rem;
 }
 
+.nav-mobile-header,
+.nav-mobile-footer {
+    display: none;
+}
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-secondary);
@@ -126,11 +131,19 @@ nav {
     color: var(--primary-color);
 }
 
+.menu-toggle i {
+    transition: transform 0.2s ease;
+}
+
 .menu-toggle:hover,
 .menu-toggle:focus-visible {
     border-color: var(--border-hover);
     background: var(--card-hover);
     outline: none;
+}
+
+.menu-toggle[aria-expanded="true"] i {
+    transform: rotate(90deg);
 }
 
 /* Sections */
@@ -466,91 +479,142 @@ footer {
 
 @media (max-width: 768px) {
 
-    /* ── Navbar ─────────────────────────────────────────── */
     nav {
-        /* Respect iPhone notch / Dynamic Island */
         padding-top: max(1rem, env(safe-area-inset-top));
-        padding-bottom: 0.85rem;
+        padding-bottom: 0.9rem;
         padding-left: 5%;
         padding-right: 5%;
-        background: rgba(8, 8, 8, 0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+        background: rgba(6, 6, 6, 0.94);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         position: fixed;
-        /* stay fixed so dropdown can be fixed relative to viewport */
     }
 
-    /* ── Hamburger ───────────────────────────────────────── */
     .menu-toggle {
         display: inline-flex;
+        width: 3rem;
+        height: 3rem;
+        border-color: rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
-    /* ── Ultra-Compact B&W Menu ─────────── */
+    .menu-toggle:hover,
+    .menu-toggle:focus-visible {
+        border-color: rgba(255, 255, 255, 0.28);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
     .nav-links {
         position: fixed;
-        top: calc(env(safe-area-inset-top, 44px) + 70px);
-        right: 16px;
-        width: 180px;
-        background: #ffffff; /* Solid White Background */
-        border: 1px solid #000000;
-        border-radius: 12px;
+        top: calc(env(safe-area-inset-top, 0px) + 5.3rem);
+        left: 5%;
+        right: 5%;
+        width: auto;
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+            #0b0b0b;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 22px;
         display: flex;
         flex-direction: column;
-        padding: 4px 0;
+        gap: 0.65rem;
+        padding: 1rem;
         z-index: 1001;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-
-        /* Animation */
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
         opacity: 0;
         visibility: hidden;
-        transform: scale(0.9) translateY(-10px);
-        transform-origin: top right;
-        transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform: translateY(-14px) scale(0.98);
+        transform-origin: top center;
+        transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.28s ease;
     }
 
     .nav-links.active {
         opacity: 1;
         visibility: visible;
-        transform: scale(1) translateY(0);
+        transform: translateY(0) scale(1);
     }
 
     .nav-links a {
-        padding: 8px 14px;
-        color: #000000; /* Solid Black Text */
-        font-size: 0.9rem;
-        font-weight: 800; /* Extra Bold */
+        min-height: 3.6rem;
+        padding: 0.95rem 1rem;
+        color: #f5f5f5;
+        font-size: 0.98rem;
+        font-weight: 600;
         text-decoration: none;
         display: flex;
         align-items: center;
-        gap: 10px;
-        transition: background 0.2s ease;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        gap: 0.9rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.03);
+        transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
     .nav-links a:active {
-        background: rgba(0, 0, 0, 0.05);
+        background: #ffffff;
+        color: #050505;
+        border-color: #ffffff;
+        transform: translateY(-1px);
+        outline: none;
     }
 
     .nav-links a i {
         display: block;
         font-size: 1rem;
-        color: #000000; /* Solid Black Icons */
-        width: 18px;
+        color: currentColor;
+        width: 1.1rem;
         text-align: center;
+        flex-shrink: 0;
+    }
+
+    .nav-mobile-header,
+    .nav-mobile-footer {
+        display: block;
+    }
+
+    .nav-mobile-header {
+        padding: 0.35rem 0.2rem 0.7rem;
+    }
+
+    .nav-mobile-kicker {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .nav-mobile-header p {
+        color: #f2f2f2;
+        font-size: 1.02rem;
+        line-height: 1.4;
+        max-width: 16rem;
+    }
+
+    .nav-mobile-footer {
+        margin-top: 0.2rem;
+        padding: 0.85rem 1rem 0.15rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.82rem;
     }
 
     .nav-overlay {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.62);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s ease;
+        transition: opacity 0.22s ease, visibility 0.22s ease;
         z-index: 1000;
     }
 
@@ -559,7 +623,6 @@ footer {
         visibility: visible;
     }
 
-    /* ── Page layout adjustments ─────────────────────────── */
     section {
         padding: 5rem 5% 2rem;
     }

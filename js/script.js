@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Scroll Reveal Animations
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
@@ -63,53 +62,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Typewriter Effect
     const words = ["scalable web applications.", "beautiful UI/UX.", "robust RESTful APIs.", "innovative tech solutions."];
     const typewriter = document.getElementById('typewriter');
-    let i = 0;
-    let timer;
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-    function typingEffect() {
-        let word = words[i].split("");
-        var loopTyping = function() {
-            if (word.length > 0) {
-                typewriter.textContent += word.shift();
-            } else {
-                deletingEffect();
-                return false;
-            }
-            timer = setTimeout(loopTyping, 100);
-        };
-        loopTyping();
+    function runTypewriter() {
+        const currentWord = words[wordIndex];
+
+        if (isDeleting) {
+            charIndex -= 1;
+        } else {
+            charIndex += 1;
+        }
+
+        typewriter.textContent = currentWord.slice(0, charIndex);
+
+        let delay = isDeleting ? 45 : 95;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            delay = 1700;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            delay = 350;
+        }
+
+        window.setTimeout(runTypewriter, delay);
     }
 
-    function deletingEffect() {
-        let word = words[i].split("");
-        var loopDeleting = function() {
-            if (word.length > 0) {
-                word.pop();
-                typewriter.textContent = word.join("");
-            } else {
-                if (words.length > (i + 1)) {
-                    i++;
-                } else {
-                    i = 0;
-                }
-                typingEffect();
-                return false;
-            }
-            timer = setTimeout(loopDeleting, 50);
-        };
-        setTimeout(loopDeleting, 2000);
-    }
-    
-    // Start typewriter
-    if (reduceMotion) {
-        typewriter.textContent = words[0];
-        setInterval(() => {
-            i = (i + 1) % words.length;
-            typewriter.textContent = words[i];
-        }, 2400);
-    } else {
-        setTimeout(typingEffect, 1000);
-    }
+    window.setTimeout(runTypewriter, 900);
 
     const currentYear = document.getElementById('current-year');
     if (currentYear) {
