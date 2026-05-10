@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
 
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent click from immediately bubbling to document
         navLinks.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
         const icon = menuToggle.querySelector('i');
         if (navLinks.classList.contains('active')) {
             icon.classList.remove('bx-menu');
@@ -32,6 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.classList.remove('bx-x');
             icon.classList.add('bx-menu');
         }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.querySelector('i').classList.replace('bx-x', 'bx-menu');
     });
 
     // Close mobile menu when clicking a link
