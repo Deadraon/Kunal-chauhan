@@ -400,30 +400,58 @@ footer {
 
 @media (max-width: 768px) {
     nav { padding: 1rem 5%; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--card-border); }
-    .menu-toggle { display: block; z-index: 1001; position: relative; font-size: 2rem; }
+    .menu-toggle { display: block; z-index: 1001; position: relative; font-size: 2.2rem; }
+    
     .nav-links {
         position: fixed;
         top: 0; right: -100%;
         width: 100%; height: 100vh;
-        background: rgba(10, 10, 10, 0.98);
-        backdrop-filter: blur(20px);
+        background: #050505; /* Solid, deeply dark background to hide anything underneath */
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        padding: 0;
-        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 0 10%;
+        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 1000;
     }
     .nav-links.active { right: 0; }
+    
     .nav-links a { 
-        font-size: 2rem; 
-        margin: 1.5rem 0; 
+        font-size: 2.5rem; 
+        margin: 0; 
+        padding: 1.5rem 0;
+        width: 100%;
         color: var(--text-secondary);
-        font-weight: 500;
-        letter-spacing: -0.03em;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color 0.3s ease, padding-left 0.3s ease;
     }
-    .nav-links a:hover {
+    
+    .nav-links a:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links a::after {
+        content: '\2192'; /* Unicode right arrow */
+        font-size: 1.5rem;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
         color: var(--primary-color);
+    }
+    
+    .nav-links a:hover, .nav-links a:active {
+        color: var(--primary-color);
+        padding-left: 10px;
+    }
+    
+    .nav-links a:hover::after, .nav-links a:active::after {
+        opacity: 1;
+        transform: translateX(0);
     }
     
     section { padding: 5rem 5% 2rem; }
