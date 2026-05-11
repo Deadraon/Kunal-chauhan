@@ -62,26 +62,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css?v=16">
+    <link rel="stylesheet" href="css/style.css?v=17">
 </head>
 <body>
 
     <nav>
         <a href="#home" class="logo">Kunal Chauhan.</a>
-        <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
-            <i class='bx bx-menu' aria-hidden="true"></i>
-        </button>
+
+        <!-- Nav links (desktop inline / mobile dropdown) -->
         <div class="nav-links" id="nav-links" aria-label="Primary navigation">
             <a href="#home"><i class='bx bx-home'></i> Home</a>
             <a href="#about"><i class='bx bx-user'></i> About</a>
             <a href="#projects"><i class='bx bx-folder'></i> Projects</a>
             <a href="#services"><i class='bx bx-briefcase-alt-2'></i> Services</a>
             <a href="#contact"><i class='bx bx-envelope'></i> Contact</a>
-            <a href="cv.html" class="nav-cv-link" target="_blank" rel="noopener noreferrer"><i class='bx bx-id-card'></i> View CV</a>
+            <!-- Mobile-only action links (hidden on desktop) -->
+            <a href="https://deadraon.dev" target="_blank" rel="noopener noreferrer" class="nav-mobile-action"><i class='bx bx-code-alt'></i> deadraon.dev</a>
+            <a href="cv.html" target="_blank" rel="noopener noreferrer" class="nav-mobile-action nav-mobile-cv"><i class='bx bx-id-card'></i> View CV</a>
             <div class="nav-mobile-footer" aria-hidden="true">
                 <span>Open for internships and freelance projects</span>
             </div>
         </div>
+
+        <!-- Desktop action buttons (hidden on mobile) -->
+        <div class="nav-actions" aria-label="External links">
+            <a href="https://deadraon.dev" target="_blank" rel="noopener noreferrer" class="nav-action-link" title="Developer Portfolio">
+                <i class='bx bx-code-alt'></i><span>deadraon.dev</span>
+            </a>
+            <a href="cv.html" target="_blank" rel="noopener noreferrer" class="nav-action-link nav-action-cv" title="View CV">
+                <i class='bx bx-id-card'></i><span>CV</span>
+            </a>
+        </div>
+
+        <!-- Mobile menu toggle -->
+        <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+            <i class='bx bx-menu' aria-hidden="true"></i>
+        </button>
     </nav>
     <div class="nav-overlay" id="nav-overlay"></div>
 
