@@ -124,7 +124,7 @@ nav {
     height: 2.75rem;
     border: 1px solid var(--card-border);
     border-radius: 8px;
-    background: transparent;
+    background: transparent 10px;
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--primary-color);
@@ -296,7 +296,7 @@ section {
 }
 
 .tag {
-    background: transparent;
+    background: transparent 5 px;
     color: var(--text-secondary);
     border: 1px solid var(--card-border);
     padding: 0.25rem 0.75rem;
@@ -484,8 +484,8 @@ footer {
         padding-left: 5%;
         padding-right: 5%;
         background: rgba(6, 6, 6, 0.94);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         position: fixed;
     }
@@ -558,7 +558,7 @@ footer {
         border: none;
         border-bottom: 1px solid rgba(63, 63, 70, 0.7);
         border-radius: 0;
-        background: transparent;
+        background: transparent 5px;
         transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
     }
 
