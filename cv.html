@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Chauhan — CV</title>
+    <meta name="description" content="Online CV of Kunal Chauhan, Full-Stack Developer and BCA student at COER University.">
+    <link rel="canonical" href="https://kunalchauhan.me/cv">
+    <meta property="og:title" content="Kunal Chauhan — CV">
+    <meta property="og:description" content="Full-Stack Developer | BCA Student | Open to internships and freelance.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cv.css">
+</head>
+<body>
+
+    <!-- Sticky Header -->
+    <header class="cv-header" id="cv-header">
+        <div class="header-inner">
+            <div class="header-identity">
+                <span class="header-name">Kunal Chauhan</span>
+                <span class="header-sep" aria-hidden="true">·</span>
+                <span class="header-title">Full-Stack Developer</span>
+            </div>
+            <div class="header-actions">
+                <div class="contact-icons" role="list" aria-label="Contact links">
+                    <a href="mailto:chauhankunal695@gmail.com" class="icon-link" title="Email" aria-label="Email" role="listitem">
+                        <i class="bx bx-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="tel:+916396714325" class="icon-link" title="Phone" aria-label="Phone" role="listitem">
+                        <i class="bx bx-phone" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/deadraon" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub" aria-label="GitHub" role="listitem">
+                        <i class="bx bxl-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/deadraon" target="_blank" rel="noopener noreferrer" class="icon-link" title="LinkedIn" aria-label="LinkedIn" role="listitem">
+                        <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://kunalchauhan.me" target="_blank" rel="noopener noreferrer" class="icon-link" title="Website" aria-label="Website" role="listitem">
+                        <i class="bx bx-globe" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <button class="btn-download" id="btn-download" onclick="downloadPDF()" title="Download PDF">
+                    <i class="bx bx-download" aria-hidden="true"></i>
+                    <span>Download PDF</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main CV Document -->
+    <main class="cv-document" id="cv-content">
+
+        <!-- Hero Block -->
+        <section class="cv-hero" aria-label="Introduction">
+            <div class="cv-hero-name">Kunal Chauhan</div>
+            <div class="cv-hero-title">Full-Stack Developer &amp; BCA Student</div>
+            <div class="cv-hero-meta">
+                <a href="mailto:chauhankunal695@gmail.com" class="meta-link">
+                    <i class="bx bx-envelope" aria-hidden="true"></i>
+                    chauhankunal695@gmail.com
+                </a>
+                <span class="meta-dot" aria-hidden="true"></span>
+                <a href="tel:+916396714325" class="meta-link">
+                    <i class="bx bx-phone" aria-hidden="true"></i>
+                    +91 6396714325
+                </a>
+                <span class="meta-dot" aria-hidden="true"></span>
+                <a href="https://github.com/deadraon" target="_blank" rel="noopener noreferrer" class="meta-link">
+                    <i class="bx bxl-github" aria-hidden="true"></i>
+                    github.com/deadraon
+                </a>
+                <span class="meta-dot" aria-hidden="true"></span>
+                <a href="https://linkedin.com/in/deadraon" target="_blank" rel="noopener noreferrer" class="meta-link">
+                    <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                    linkedin.com/in/deadraon
+                </a>
+                <span class="meta-dot" aria-hidden="true"></span>
+                <a href="https://kunalchauhan.me" target="_blank" rel="noopener noreferrer" class="meta-link">
+                    <i class="bx bx-globe" aria-hidden="true"></i>
+                    kunalchauhan.me
+                </a>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="cv-section" id="summary" aria-labelledby="summary-heading">
+            <h2 class="section-heading" id="summary-heading">Summary</h2>
+            <p class="summary-text">
+                Passionate Full-Stack Developer and BCA student at COER University, Roorkee, maintaining a 9.0 CGPA. Experienced in building robust web and mobile applications using React, Next.js, Node.js, Flutter, and cloud infrastructure. Strong fundamentals in data structures, system design, and database architecture. Open to internships and freelance projects.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="cv-section" id="education" aria-labelledby="education-heading">
+            <h2 class="section-heading" id="education-heading">Education</h2>
+            <div class="edu-item">
+                <div class="item-header">
+                    <div class="item-left">
+                        <div class="item-title">Bachelor of Computer Applications (BCA)</div>
+                        <div class="item-subtitle">COER University, Roorkee</div>
+                        <div class="item-detail">Coursework: Data Structures, Algorithms, DBMS, OOP, Web Technologies</div>
+                    </div>
+                    <div class="item-right">
+                        <div class="item-date">2024 – 2028</div>
+                        <div class="item-badge">CGPA: 9.0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="cv-section" id="skills" aria-labelledby="skills-heading">
+            <h2 class="section-heading" id="skills-heading">Skills</h2>
+            <div class="skills-block">
+                <div class="skill-row">
+                    <span class="skill-label">Frontend</span>
+                    <div class="skill-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">React</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Flutter</span>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Backend</span>
+                    <div class="skill-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">JDBC</span>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Database</span>
+                    <div class="skill-tags">
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">SQL / NoSQL</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Languages</span>
+                    <div class="skill-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Dart</span>
+                        <span class="tag">C / C++</span>
+                        <span class="tag">Java</span>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Tools &amp; Cloud</span>
+                    <div class="skill-tags">
+                        <span class="tag">Azure</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">UI/UX Design</span>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Languages</span>
+                    <div class="skill-tags">
+                        <span class="tag">English</span>
+                        <span class="tag">Hindi</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="cv-section" id="experience" aria-labelledby="experience-heading">
+            <h2 class="section-heading" id="experience-heading">Experience</h2>
+
+            <div class="exp-item">
+                <div class="item-header">
+                    <div class="item-left">
+                        <div class="item-title">Software Engineering Intern</div>
+                        <div class="item-subtitle">Java &amp; MySQL Training</div>
+                    </div>
+                    <div class="item-right">
+                        <div class="item-date">June 2024</div>
+                    </div>
+                </div>
+                <ul class="item-bullets" aria-label="Responsibilities">
+                    <li>Built end-to-end JDBC applications connecting Java with MySQL databases.</li>
+                    <li>Practiced complex SQL queries and optimized stored procedures for performance.</li>
+                    <li>Designed normalized database schemas following relational design principles.</li>
+                    <li>Implemented full CRUD operations using Java JDBC and prepared statements.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="item-header">
+                    <div class="item-left">
+                        <div class="item-title">2nd Place — College Hackathon</div>
+                        <div class="item-subtitle">COER University</div>
+                    </div>
+                    <div class="item-right">
+                        <div class="item-date">2024</div>
+                    </div>
+                </div>
+                <ul class="item-bullets" aria-label="Highlights">
+                    <li>Built a functional prototype within a limited timeframe competing with top college talent.</li>
+                    <li>Recognized for technical execution, code quality, and pristine presentation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="cv-section" id="projects" aria-labelledby="projects-heading">
+            <h2 class="section-heading" id="projects-heading">Projects</h2>
+
+            <div class="project-item" id="project-gainiq">
+                <div class="project-header">
+                    <div class="project-left">
+                        <span class="project-name">GainIQ</span>
+                        <div class="project-desc">AI fitness platform with personalized diet planning and structured workout routines.</div>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="project-right">
+                        <a href="#" class="btn-live" aria-label="Download GainIQ APK">
+                            <i class="bx bx-download" aria-hidden="true"></i> Download APK
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" id="project-tajview">
+                <div class="project-header">
+                    <div class="project-left">
+                        <span class="project-name">Taj View Residency</span>
+                        <div class="project-desc">Premium hotel website with elegant UI, room showcasing, and reservation management.</div>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                    </div>
+                    <div class="project-right">
+                        <span class="btn-live btn-soon" aria-label="Link coming soon">
+                            <i class="bx bx-link-external" aria-hidden="true"></i> Coming Soon
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" id="project-shivaay">
+                <div class="project-header">
+                    <div class="project-left">
+                        <span class="project-name">Shivaay Fitness App</span>
+                        <div class="project-desc">Gym management mobile app with member tracking and fitness scheduling.</div>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Dart</span>
+                            <span class="tag">Java</span>
+                        </div>
+                    </div>
+                    <div class="project-right">
+                        <a href="https://github.com/deadraon" target="_blank" rel="noopener noreferrer" class="btn-live" aria-label="View Shivaay Fitness App">
+                            <i class="bx bx-link-external" aria-hidden="true"></i> Live
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" id="project-lifeline">
+                <div class="project-header">
+                    <div class="project-left">
+                        <span class="project-name">Lifeline Hospital</span>
+                        <div class="project-desc">Healthcare web portal for patient information, doctor scheduling, and facility details.</div>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="project-right">
+                        <a href="https://github.com/deadraon" target="_blank" rel="noopener noreferrer" class="btn-live" aria-label="View Lifeline Hospital">
+                            <i class="bx bx-link-external" aria-hidden="true"></i> Live
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" id="project-omchaudhary">
+                <div class="project-header">
+                    <div class="project-left">
+                        <span class="project-name">Om Chaudhary Hospital</span>
+                        <div class="project-desc">Hospital website for streamlining patient appointments and showcasing medical services.</div>
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">Database</span>
+                        </div>
+                    </div>
+                    <div class="project-right">
+                        <a href="https://github.com/deadraon" target="_blank" rel="noopener noreferrer" class="btn-live" aria-label="View Om Chaudhary Hospital">
+                            <i class="bx bx-link-external" aria-hidden="true"></i> Live
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" id="project-rustichouse">
+                <div class="project-header">
+                    <div class="project-left">
+                        <span class="project-name">Rustic House</span>
+                        <div class="project-desc">Modern interactive restaurant website with dynamic digital menus and high-quality imagery.</div>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-right">
+                        <a href="https://github.com/deadraon" target="_blank" rel="noopener noreferrer" class="btn-live" aria-label="View Rustic House">
+                            <i class="bx bx-link-external" aria-hidden="true"></i> Live
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Achievements -->
+        <section class="cv-section" id="achievements" aria-labelledby="achievements-heading">
+            <h2 class="section-heading" id="achievements-heading">Achievements</h2>
+            <ul class="achievement-list" aria-label="Achievements">
+                <li class="achievement-item">
+                    <i class="bx bx-trophy achievement-icon" aria-hidden="true"></i>
+                    <div>
+                        <div class="achievement-title">2nd Place — College Hackathon</div>
+                        <div class="achievement-sub">COER University, Roorkee</div>
+                    </div>
+                </li>
+                <li class="achievement-item">
+                    <i class="bx bx-star achievement-icon" aria-hidden="true"></i>
+                    <div>
+                        <div class="achievement-title">9.0 CGPA in BCA</div>
+                        <div class="achievement-sub">COER University — Consistently high academic performance</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer class="cv-footer">
+            <p>
+                Last updated May 2026 &nbsp;·&nbsp;
+                <a href="https://kunalchauhan.me" target="_blank" rel="noopener noreferrer">kunalchauhan.me</a>
+            </p>
+        </footer>
+
+    </main>
+
+    <script src="js/cv.js"></script>
+</body>
+</html>
