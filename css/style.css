@@ -116,6 +116,50 @@ nav {
     color: var(--primary-color);
 }
 
+/* CV pill link in desktop nav */
+.nav-cv-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.28rem 0.75rem !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: 999px !important;
+    font-size: 0.82rem !important;
+    color: var(--primary-color) !important;
+    background: rgba(255, 255, 255, 0.04);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.nav-cv-link i {
+    display: inline-block !important;
+    font-size: 0.9rem;
+}
+
+.nav-cv-link:hover {
+    background: rgba(255, 255, 255, 0.10) !important;
+    border-color: var(--border-hover) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Hero CV text link */
+.cv-hero-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 1.2rem;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+    letter-spacing: 0.01em;
+}
+
+.cv-hero-link:hover {
+    color: var(--primary-color);
+    gap: 0.5rem;
+}
+
 .menu-toggle {
     display: none;
     align-items: center;
@@ -564,6 +608,26 @@ footer {
 
     .nav-links a:last-of-type {
         border-bottom: none;
+    }
+
+    /* CV link in mobile menu — styled like other items but with accent */
+    .nav-cv-link {
+        border: none !important;
+        border-radius: 0 !important;
+        border-bottom: 1px solid rgba(63, 63, 70, 0.7) !important;
+        background: transparent !important;
+        padding: 0.58rem 0.08rem !important;
+        color: var(--accent-color) !important;
+        font-size: 0.82rem !important;
+    }
+
+    .nav-cv-link i {
+        color: var(--accent-color) !important;
+    }
+
+    .nav-cv-link:hover {
+        color: #fff !important;
+        background: transparent !important;
     }
 
     .nav-links a:hover,
