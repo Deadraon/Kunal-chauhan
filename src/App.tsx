@@ -81,31 +81,27 @@ export default function App() {
 
   // Sync scroll position with navigation active state
   useEffect(() => {
-    const sections: Tab[] = ["home", "about", "projects", "services", "contact"];
-    const observers = sections.map((id) => {
-      const el = document.getElementById(id);
-      if (!el) return null;
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveTab(id);
-            }
-          });
-        },
-        { threshold: 0.2, rootMargin: "-20% 0px -55% 0px" }
-      );
-      observer.observe(el);
-      return { observer, el };
-    });
+    const handleScroll = () => {
+      const sections: Tab[] = ["home", "about", "projects", "services", "contact"];
+      const triggerPoint = 160; // offset slightly below sticky navigation bar
+      let currentSection: Tab = "home";
 
-    return () => {
-      observers.forEach((obs) => {
-        if (obs) {
-          obs.observer.unobserve(obs.el);
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= triggerPoint) {
+            currentSection = id;
+          }
         }
-      });
+      }
+      setActiveTab(currentSection);
     };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Run once initially
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
 
