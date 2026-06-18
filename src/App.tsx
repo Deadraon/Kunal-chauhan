@@ -29,11 +29,6 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const [journeyModalOpen, setJourneyModalOpen] = useState(false);
-
-  // Lead subscription states
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
 
   // Contact form states
   const [contactName, setContactName] = useState("");
@@ -113,14 +108,7 @@ export default function App() {
     };
   }, []);
 
-  const handleSubscribe = (e: FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setSubmitted(true);
-    setTimeout(() => {
-      setEmail("");
-    }, 2000);
-  };
+
 
   const handleContactSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -199,7 +187,7 @@ export default function App() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {tab === "contact" ? "Contact Us" : tab}
+                {tab === "contact" ? "Contact Me" : tab}
               </button>
             ))}
           </nav>
@@ -217,10 +205,7 @@ export default function App() {
             </a>
             <button
               id="nav-cta-button"
-              onClick={() => {
-                setJourneyModalOpen(true);
-                setSubmitted(false);
-              }}
+              onClick={() => handleNavClick("contact")}
               className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-all duration-300 cursor-pointer"
             >
               Begin Journey
@@ -259,7 +244,7 @@ export default function App() {
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {tab === "contact" ? "Contact Us" : tab}
+                  {tab === "contact" ? "Contact Me" : tab}
                 </button>
               ))}
               <div className="flex flex-col gap-3.5 mt-2">
@@ -275,11 +260,7 @@ export default function App() {
                 </a>
                 <button
                   id="mobile-nav-cta-button"
-                  onClick={() => {
-                    setJourneyModalOpen(true);
-                    setSubmitted(false);
-                    setMobileMenuOpen(false);
-                  }}
+                  onClick={() => handleNavClick("contact")}
                   className="liquid-glass rounded-full w-full py-3.5 text-sm text-foreground hover:scale-[1.02] transition-transform duration-300"
                 >
                   Begin Journey
@@ -708,7 +689,7 @@ export default function App() {
               className="text-4xl sm:text-6xl text-foreground font-normal mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Contact Us
+              Contact Me
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base max-w-md mx-auto mb-10 leading-relaxed">
               Drop an impulse. Share your project resonance. Let's build together in the quiet.
@@ -853,114 +834,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/* 5. Journey Modal Dialog */}
-      <AnimatePresence>
-        {journeyModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setJourneyModalOpen(false)}
-              className="absolute inset-0 bg-background/60 backdrop-blur-md"
-            />
-            {/* Modal Body */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-md liquid-glass p-8 sm:p-12 rounded-3xl border border-white/10 relative z-10"
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setJourneyModalOpen(false)}
-                className="absolute top-6 right-6 text-muted-foreground hover:text-foreground cursor-pointer transition-colors p-1"
-                aria-label="Close modal"
-              >
-                <X className="size-4" />
-              </button>
 
-              <div className="flex justify-center mb-6 text-foreground">
-                <Disc className="size-10 animate-spin text-muted-foreground" style={{ animationDuration: "12s" }} />
-              </div>
-
-              {!submitted ? (
-                <>
-                  <h2
-                    id="journey-heading"
-                    className="text-4xl text-foreground font-normal mb-3 text-center"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    Begin Journey
-                  </h2>
-                  <p className="text-xs text-muted-foreground mb-8 leading-relaxed text-center">
-                    Initiate contact for internships, freelance projects, or standard inquiries. Enter your address below, and we will find you through the silence.
-                  </p>
-
-                  <form id="journey-form" onSubmit={handleSubscribe} className="flex flex-col gap-4">
-                    <div className="relative">
-                      <input
-                        id="journey-email-input"
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Your email address"
-                        className="w-full bg-white/[0.02] border border-white/10 rounded-full pl-6 pr-12 py-3 text-xs text-foreground placeholder:text-muted-foreground/30 focus:outline-none focus:border-white/30 transition-all text-center"
-                      />
-                      <button
-                        id="journey-email-icon-btn"
-                        type="submit"
-                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full text-muted-foreground hover:text-foreground cursor-pointer"
-                      >
-                        <Mail className="size-4" />
-                      </button>
-                    </div>
-
-                    <button
-                      id="journey-submit-btn"
-                      type="submit"
-                      className="liquid-glass rounded-full py-3.5 text-xs text-foreground hover:scale-[1.03] transition-transform font-mono uppercase tracking-wider mt-2 cursor-pointer"
-                    >
-                      Request Coordinate Link
-                    </button>
-                  </form>
-                </>
-              ) : (
-                <motion.div
-                  id="journey-success"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="py-12 text-center"
-                >
-                  <h3
-                    className="text-3xl text-foreground font-normal mb-3"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    Journey initiated.
-                  </h3>
-                  <p className="text-xs text-muted-foreground max-w-xs mx-auto leading-relaxed">
-                    Your coordinate has been recorded. Let the quiet space resume.
-                  </p>
-
-                  <button
-                    id="journey-return-btn"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setJourneyModalOpen(false);
-                    }}
-                    className="liquid-glass rounded-full px-8 py-2.5 text-xs text-foreground mt-8 hover:scale-[1.03] transition-transform cursor-pointer"
-                  >
-                    Return to Silence
-                  </button>
-                </motion.div>
-              )}
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
