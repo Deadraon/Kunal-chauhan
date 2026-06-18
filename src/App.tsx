@@ -158,7 +158,7 @@ export default function App() {
       </div>
 
       {/* 2. Glassmorphic Sticky Navigation Bar */}
-      <header className="sticky top-0 z-30 w-full bg-black/15 backdrop-blur-lg border-b border-white/[0.04] transition-all duration-300">
+      <header className="sticky top-0 z-30 w-full liquid-glass transition-all duration-300">
         <div className="flex flex-row justify-between items-center px-8 py-5 max-w-7xl mx-auto">
           {/* Logo */}
           <button
@@ -332,7 +332,7 @@ export default function App() {
             {/* Philosophy Glassmorphic Box */}
             <div className="liquid-glass p-8 sm:p-12 rounded-3xl text-left border border-white/[0.03] mb-8 w-full">
               <p className="text-foreground text-lg sm:text-xl font-normal leading-relaxed mb-6 italic" style={{ fontFamily: "var(--font-display)" }}>
-                "Our digital creations are a manifestation of absolute technical clarity. I believe the future belongs to those who learn to design without the constant friction of bloated workflows."
+                "Digital creations should be a manifestation of absolute technical clarity. I believe in building high-performance web architectures where elegant UI meets clean, scalable backend logic."
               </p>
               <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-4">
                 Why must every modern tool scream for attention or introduce unnecessary layers of lag? I do the opposite. I construct software that is robust, compiles cleanly, executes instantly with high-fidelity visual feedback, and operates beautifully under heavy load.
