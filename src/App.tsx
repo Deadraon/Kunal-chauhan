@@ -158,7 +158,7 @@ export default function App() {
       </div>
 
       {/* 2. Glassmorphic Sticky Navigation Bar */}
-      <header className="sticky top-0 z-30 w-full bg-background/30 backdrop-blur-lg border-b border-white/[0.04] transition-all duration-300">
+      <header className="sticky top-0 z-30 w-full bg-black/15 backdrop-blur-lg border-b border-white/[0.04] transition-all duration-300">
         <div className="flex flex-row justify-between items-center px-8 py-5 max-w-7xl mx-auto">
           {/* Logo */}
           <button
